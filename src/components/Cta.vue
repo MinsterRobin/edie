@@ -37,6 +37,7 @@
         display: flex;
         justify-content: space-between;
         max-width: 350px;
+        min-width: 100px;
         border-radius: 12px;
         background-color: $color-gray-6;
         padding: 4px 4px 4px 20px;
@@ -55,7 +56,7 @@
     }
 
     .input-email {
-        width: 350px;
+        width: 100%;
         background-color: $color-gray-6;
         color: $color-gray-1;
     }
@@ -64,6 +65,10 @@
         background-color: $color-blue;
         color: $color-gray-6;
         padding: 11px 25px;
+
+        @include breakpoint('xs') {
+            padding: 10px 20px;
+        }
     }
 
     ::placeholder {

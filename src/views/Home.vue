@@ -1,25 +1,46 @@
 <template>
     <div class="index-layout">
+
         <Navbar/>
-        <div id="Home" class="section-hero-layout">
-            <p class="hero-catch-phrase">Unhappy with your website?</p>
-            <p class="hero-head-title">We create beautiful and fast web services</p>
-            <img class="hero-img" v-bind:src="require('@/assets/heroImage.jpg')" alt="Hero Photo">
-            <p class="hero-head-title">Story, emotion and purpose</p>
-            <p class="hero-introduction-text">We help transform your ideas into real world applications that will outperform
-                your toughest competition and help you achieve your strategic goals in short
-                period of time.</p>
-            <Cta class="cta-container"/>
+
+        <div class="content-layout">
+
+            <div id="Home" class="section-hero-layout">
+                <div>
+                    <p class="hero-catch-phrase">Unhappy with your website?</p>
+                    <p class="hero-head-title">We create beautiful and fast web services</p>
+                </div>
+                <img class="hero-img" v-bind:src="require('@/assets/heroImage.jpg')" alt="Hero Photo">
+                <p class="hero-head-title">Story, emotion and purpose</p>
+                <p class="hero-introduction-text">We help transform your ideas into real world applications that will outperform
+                    your toughest competition and help you achieve your strategic goals in short
+                    period of time.</p>
+                <Cta class="cta-container"/>
+            </div>
+
+            <div id="Services" class="section-services-layout">
+                <p class="section-title">We offer high demand services</p>
+
+                <div class="service-cards-layout">
+                    <ServiceCard icon="Pen" color="blue"/>
+                    <ServiceCard icon="Code" color="green"/>
+                    <ServiceCard icon="DNS" color="red"/>
+                </div>
+            </div>
+
         </div>
+
     </div>
 </template>
 
 <script>
     import Navbar from "@/components/Navbar";
     import Cta from "@/components/Cta";
+    import ServiceCard from "@/components/ServiceCard";
+
     export default {
         name: "Index",
-        components: {Cta, Navbar}
+        components: {ServiceCard, Cta, Navbar}
     }
 </script>
 
@@ -46,10 +67,22 @@
         }
     }
 
+    .content-layout {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 200px;
+    }
+
     .section-hero-layout {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 42px;
+
+        @include breakpoint('xs') {
+            gap: 25px;
+        }
     }
 
     .hero-catch-phrase {
@@ -63,6 +96,7 @@
         font-size: $font-size-xx-large;
         color: $color-gray-1;
         max-width: 530px;
+
         @include breakpoint('xs') {
             font-size: $font-size-large;
         }
@@ -91,7 +125,7 @@
         }
     }
 
-    p, .cta-container {
+    .hero-introduction-text, .hero-catch-phrase, .hero-head-title, .cta-container {
         margin-left: 10%;
 
         @include breakpoint('xs') {
@@ -99,5 +133,17 @@
         }
     }
 
+    .section-title {
+        font-family: $font-family-primary;
+        font-size: $font-size-very-large;
+        font-weight: 500;
+        color: $color-gray-1;
+        max-width: 380px;
+    }
 
+    .service-cards-layout {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 </style>
