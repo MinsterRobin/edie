@@ -1,0 +1,12 @@
+$media-direction: max;
+
+$breakpoints: (
+    'xs':   768px,
+    's': 960px
+);
+
+@mixin breakpoint($size, $direction: $media-direction) {
+    @media (#{$direction}-width: #{map-get($breakpoints, $size)}) {
+        @content;
+    }
+}
