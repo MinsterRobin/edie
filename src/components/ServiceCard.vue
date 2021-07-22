@@ -43,7 +43,6 @@
     .service-card-layout:hover {
         box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
         transform: scale(1.05);
-
     }
 
     .card-icon {

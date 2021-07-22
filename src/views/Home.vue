@@ -4,6 +4,8 @@
 
             <Navbar/>
 
+            <MobileMenu />
+
             <div class="content-layout">
 
                 <Hero />
@@ -32,10 +34,11 @@
     import Services from "@/views/Services";
     import Works from "@/views/Works";
     import Team from "@/views/Team";
+    import MobileMenu from "@/components/MobileMenu";
 
     export default {
         name: "Index",
-        components: {Team, Works, Services, Hero, Footer, Clients, Navbar}
+        components: {MobileMenu, Team, Works, Services, Hero, Footer, Clients, Navbar}
     }
 </script>
 

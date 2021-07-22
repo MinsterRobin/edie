@@ -65,16 +65,14 @@
     .footer-sub-layout {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 64px;
-
-        @include breakpoint('xs') {
-            flex-direction: column;
-        }
     }
 
     .footer-nav {
         display: flex;
         flex-direction: column;
+        gap: 8px;
     }
 
     .socials-layout {
@@ -87,6 +85,7 @@
     .social {
         margin-right: 10px;
         width: 24px;
+        cursor: pointer;
     }
 
     .title {

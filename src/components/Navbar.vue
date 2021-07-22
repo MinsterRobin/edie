@@ -1,6 +1,6 @@
 <template>
     <div class="navbar-layout">
-        <p class="head-title">Edie</p>
+        <router-link to="/" class="head-title">Edie</router-link>
         <div class="nav-layout">
             <router-link to="/#Home" class="router-link">Home</router-link>
             <router-link to="/#Services" class="router-link">Services</router-link>
@@ -8,13 +8,33 @@
             <router-link to="/#Clients" class="router-link">Clients</router-link>
             <router-link to="/#Contact" class="router-link">Contact</router-link>
         </div>
-        <img class="hamburger-menu" v-bind:src="require('@/assets/hamburger_menu.svg')" alt="Hamburger Menu">
+
+<!--        <div class="hamburger-menu-container">-->
+            <img
+                    class="hamburger-menu"
+                    v-bind:src="require('@/assets/hamburger_menu.svg')"
+                    alt="Hamburger Menu"
+                    v-on:click.prevent="toggleMobileNav"
+            >
+<!--        </div>-->
     </div>
 </template>
 
 <script>
+    import { store, mutations } from "@/store.js";
+
     export default {
-        name: "Navbar"
+        name: "Navbar",
+        computed: {
+            isMobileNavOpen() {
+                return store.isMobileNavOpen;
+            }
+        },
+        methods: {
+            toggleMobileNav() {
+                mutations.toggleMobileNav();
+            }
+        }
     }
 </script>
 
@@ -25,7 +45,8 @@
     .navbar-layout {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
+        height: 100%;
         margin-bottom: 96px;
 
         @include breakpoint('xs') {
@@ -37,6 +58,8 @@
         font-family: $font-family-tertiary;
         font-weight: 800;
         font-size: $font-size-very-large;
+        color: $color-gray-1;
+        text-decoration: none;
 
         @include breakpoint('xs') {
             font-size: $font-size-large;
@@ -47,6 +70,7 @@
         display: flex;
         max-width: 703px;
         width: 100%;
+        align-items: center;
         justify-content: space-between;
 
         @include breakpoint('s') {
@@ -60,15 +84,25 @@
         font-weight: 500;
         color: $color-gray-1;
         text-decoration-line: none;
+        transition: all 0.1s ease-in-out;
     }
 
-    .router-link-active {
-        text-decoration-line: underline;
+    .router-link:hover {
+        opacity: 80%;
+    }
+
+    .hamburger-menu-container {
+        display: flex;
+        justify-content: center;
+        max-width: 25px;
+        width: 100%;
     }
 
     .hamburger-menu {
         display: none;
-        height: 12px;
+        height: auto;
+        max-width: 25px;
+        width: 100%;
 
         @include breakpoint('s') {
             display: unset;

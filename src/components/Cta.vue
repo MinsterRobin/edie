@@ -65,10 +65,15 @@
         background-color: $color-blue;
         color: $color-gray-6;
         padding: 11px 25px;
+        transition: all 0.1s ease-in-out;
 
         @include breakpoint('xs') {
             padding: 10px 20px;
         }
+    }
+
+    .input-submit:hover {
+        opacity: 80%;
     }
 
     ::placeholder {
