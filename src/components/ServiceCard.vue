@@ -103,6 +103,5 @@
     button:hover {
         background-color: $color-blue;
         color: $color-background;
-
     }
 </style>
