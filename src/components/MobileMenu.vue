@@ -116,10 +116,16 @@
 
         min-width: max-content;
         margin-right: 45px;
+        opacity: 100%;
+        transition: all 0.1s ease-in-out;
 
         @include breakpoint('xs') {
             font-size: $font-size-large;
         }
+    }
+
+    .router-link:hover {
+        opacity: 80%;
     }
 
 </style>
