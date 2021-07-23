@@ -88,7 +88,7 @@
     }
 
     .router-link:hover {
-        opacity: 85%;
+        text-decoration: underline;
     }
 
     .hamburger-menu-container {
