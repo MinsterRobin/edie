@@ -23,9 +23,12 @@
     @import "../styles/variables";
 
     .section-title {
-        font-family: $font-family-primary;
-        font-size: $font-size-very-large;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-very-large;
+            weight: 500;
+        }
+
         color: $color-gray-1;
         max-width: 380px;
 

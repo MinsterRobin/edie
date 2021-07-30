@@ -34,10 +34,6 @@
         display: flex;
         flex-direction: column;
         gap: 42px;
-
-        @include breakpoint('xs') {
-            gap: 25px;
-        }
     }
 
     .hero-catch-phrase {
@@ -51,10 +47,6 @@
         font-size: $font-size-xx-large;
         color: $color-gray-1;
         max-width: 530px;
-
-        @include breakpoint('xs') {
-            font-size: $font-size-large;
-        }
     }
 
     .hero-head-title:nth-of-type(3) {
@@ -74,17 +66,26 @@
         max-width: 370px;
     }
 
-    .hero-catch-phrase, .hero-introduction-text {
-        @include breakpoint('xs') {
-            font-size: $font-size-very-small;
-        }
-    }
-
     .hero-introduction-text, .hero-catch-phrase, .hero-head-title, .cta-container {
         margin-left: 10%;
+    }
 
-        @include breakpoint('xs') {
+    @include breakpoint('xs') {
+        .section-hero-layout {
+            gap: 25px;
+        }
+
+        .hero-head-title {
+            font-size: $font-size-large;
+        }
+
+        .hero-catch-phrase, .hero-introduction-text {
+            font-size: $font-size-very-small;
+        }
+
+        .hero-introduction-text, .hero-catch-phrase, .hero-head-title, .cta-container {
             margin-left: 4%;
         }
     }
+    
 </style>

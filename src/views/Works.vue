@@ -41,10 +41,6 @@
         font-weight: 500;
         color: $color-gray-1;
         max-width: 380px;
-
-        @include breakpoint('xs') {
-            font-size: $font-size-large;
-        }
     }
 
     .work-cards-layout {
@@ -53,22 +49,10 @@
         grid-gap: 0 20px;
 
         justify-content: space-between;
-
-        @include breakpoint('xs') {
-            display: flex;
-            max-width: 540px;
-            margin: 45px auto auto;
-            flex-direction: column;
-            row-gap: 36px;
-        }
     }
 
     .work-card-container:nth-of-type(2n + 1) {
         padding-top: 150px;
-
-        @include breakpoint('xs') {
-            padding-top: 0;
-        }
     }
 
     .see-more {
@@ -82,8 +66,26 @@
         color: $color-blue;
         align-self: flex-end;
         margin-top: 35px;
+    }
 
-        @include breakpoint('xs') {
+    @include breakpoint('xs') {
+        .section-title {
+            font-size: $font-size-large;
+        }
+
+        .work-cards-layout {
+            display: flex;
+            max-width: 540px;
+            margin: 45px auto auto;
+            flex-direction: column;
+            row-gap: 36px;
+        }
+
+        .work-card-container:nth-of-type(2n + 1) {
+            padding-top: 0;
+        }
+
+        .see-more {
             font-size: $font-size-medium;
             align-self: flex-start;
         }

@@ -59,10 +59,6 @@
         flex-direction: column;
 
         font-family: $font-family-primary;
-
-        @include breakpoint('xs') {
-            padding: $padding-small;
-        }
     }
 
     .content-layout {
@@ -71,8 +67,14 @@
         display: flex;
         flex-direction: column;
         row-gap: 200px;
+    }
 
-        @include breakpoint('xs') {
+    @include breakpoint('xs') {
+        .index-layout {
+            padding: $padding-small;
+        }
+
+        .content-layout {
             row-gap: 110px;
         }
     }

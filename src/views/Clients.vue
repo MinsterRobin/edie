@@ -28,9 +28,12 @@
     }
 
     .client-quote {
-        font-family: $font-family-primary;
-        font-size: $font-size-very-large;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-very-large;
+            weight: 500;
+        }
+
         color: $color-gray-1;
 
         @include breakpoint('xs') {
@@ -57,16 +60,22 @@
     }
 
     .client-info-name {
-        font-family: $font-family-primary;
-        font-size: $font-size-large;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-large;
+            weight: 500;
+        }
+
         color: $color-gray-1;
     }
 
     .client-info-title {
-        font-family: $font-family-primary;
-        font-size: $font-size-medium;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-medium;
+            weight: 500;
+        }
+
         color: $color-gray-3;
     }
 

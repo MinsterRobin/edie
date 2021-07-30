@@ -31,39 +31,40 @@
         align-items: center;
         justify-content: space-between;
         gap: 40px;
-
-        @include breakpoint('xs') {
-            flex-direction: column;
-        }
     }
 
     .team-meet-phrase {
-        font-family: $font-family-primary;
-        font-size: $font-size-medium;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-medium;
+            weight: 500;
+        }
+
         color: $color-red;
     }
 
     .team-catch-phrase {
-        font-family: $font-family-primary;
-        font-size: $font-size-very-large;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-very-large;
+            weight: 500;
+        }
+
         color: $color-gray-1;
     }
 
     .team-sub-title {
-        font-family: $font-family-primary;
-        font-size: $font-size-regular;
-        font-weight: 400;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-regular;
+            weight: 400;
+        }
+
         color: $color-gray-2;
     }
 
     .team-text-layout {
         max-width: 300px;
-
-        @include breakpoint('xs') {
-            align-self: flex-start;
-        }
     }
 
     .team-members-grid-layout {
@@ -73,10 +74,6 @@
         display: grid;
         grid-template: auto auto/ auto auto;
         grid-gap: 24px;
-
-        @include breakpoint('xs') {
-            grid-gap: 9px;
-        }
     }
 
     .team-member {
@@ -98,6 +95,20 @@
         grid-row: 1/3;
         align-self: center;
         width: 100%;
+    }
+
+    @include breakpoint('xs') {
+        .section-team-layout {
+            flex-direction: column;
+        }
+
+        .team-text-layout {
+            align-self: flex-start;
+        }
+
+        .team-members-grid-layout {
+            grid-gap: 9px;
+        }
     }
 
 </style>

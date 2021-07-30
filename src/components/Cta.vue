@@ -27,10 +27,6 @@
     label {
         font-family: $font-family-primary;
         color: $color-gray-3;
-
-        @include breakpoint('xs') {
-            font-size: $font-size-xx-small;
-        }
     }
 
     .cta-inputs {
@@ -49,10 +45,6 @@
         font-weight: 500;
         border: none;
         border-radius: 12px;
-
-        @include breakpoint('xs') {
-            font-size: $font-size-small;
-        }
     }
 
     .input-email {
@@ -66,10 +58,6 @@
         color: $color-gray-6;
         padding: 11px 25px;
         transition: all 0.1s ease-in-out;
-
-        @include breakpoint('xs') {
-            padding: 10px 20px;
-        }
     }
 
     .input-submit:hover {
@@ -78,5 +66,19 @@
 
     ::placeholder {
         color: $color-gray-4;
+    }
+
+    @include breakpoint('xs') {
+        label {
+            font-size: $font-size-xx-small;
+        }
+
+        .input-submit {
+            padding: 10px 20px;
+        }
+
+        .input-email, .input-submit {
+            font-size: $font-size-small
+        }
     }
 </style>

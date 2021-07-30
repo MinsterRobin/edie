@@ -41,24 +41,17 @@
     @import "../styles/breakpoints";
     @import "../styles/variables";
 
-    .slide-enter-active,
-    .slide-leave-active
-    {
+    .slide-enter-active, .slide-leave-active {
         transition: transform 0.2s ease;
     }
 
-    .slide-enter,
-    .slide-leave-to {
+    .slide-enter, .slide-leave-to {
         transform: translateX(100%);
         transition: all 150ms ease-in 0s
     }
 
     .mobile-menu-container {
         display: none;
-
-        @include breakpoint('s') {
-            display: unset;
-        }
     }
 
     .mobile-menu-backdrop {
@@ -88,10 +81,6 @@
         justify-content: center;
         padding: $padding-large $padding-large $padding-large 80px;
         gap: 1.5vh;
-
-        @include breakpoint('xs') {
-            padding: $padding-small $padding-small $padding-small 60px;
-        }
     }
 
     .close-button {
@@ -99,17 +88,15 @@
         right: $padding-large;
         top: $padding-large + 12px;
         width: 22px;
-
-        @include breakpoint('xs') {
-            right: $padding-small;
-            top: $padding-small + 4px;
-        }
     }
 
     .router-link {
-        font-family: $font-family-primary;
-        font-size: $font-size-very-large;
-        font-weight: 300;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-very-large;
+            weight: 300;
+        }
+
         color: $color-background;
         text-decoration: none;
         text-align: left;
@@ -118,14 +105,31 @@
         margin-right: 45px;
         opacity: 100%;
         transition: all 0.1s ease-in-out;
-
-        @include breakpoint('xs') {
-            font-size: $font-size-large;
-        }
     }
 
     .router-link:hover {
         opacity: 80%;
+    }
+
+    @include breakpoint('s') {
+        .mobile-menu-container {
+            display: unset;
+        }
+    }
+
+    @include breakpoint('xs') {
+        .mobile-menu-layout {
+            padding: $padding-small $padding-small $padding-small 60px;
+        }
+
+        .close-button {
+            right: $padding-small;
+            top: $padding-small + 4px;
+        }
+
+        .router-link {
+            font-size: $font-size-large;
+        }
     }
 
 </style>

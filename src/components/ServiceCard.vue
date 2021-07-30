@@ -38,11 +38,11 @@
         margin: auto;
 
         transition: all 200ms ease-in-out;
-    }
 
-    .service-card-layout:hover {
-        box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
-        transform: scale(1.05);
+        &:hover {
+            box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+            transform: scale(1.05);
+        }
     }
 
     .card-icon {
@@ -73,16 +73,22 @@
     }
 
     .card-title {
-        font-family: $font-family-primary;
-        font-size: $font-size-large;
-        font-weight: 700;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-large;
+            weight: 700;
+        }
+
         margin-bottom: 24px;
     }
 
     .card-text {
-        font-family: $font-family-primary;
-        font-size: $font-size-regular;
-        font-weight: 400;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-regular;
+            weight: 400;
+        }
+
         margin-bottom: 30px;
     }
 
@@ -97,10 +103,11 @@
         border-radius: 12px;
 
         transition: all 200ms ease-in-out;
+
+        &:hover {
+            background-color: $color-blue;
+            color: $color-background;
+        }
     }
 
-    button:hover {
-        background-color: $color-blue;
-        color: $color-background;
-    }
 </style>

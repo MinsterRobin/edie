@@ -48,40 +48,35 @@
         align-items: stretch;
         height: 100%;
         margin-bottom: 96px;
-
-        @include breakpoint('xs') {
-            margin-bottom: 46px;
-        }
     }
 
     .head-title {
-        font-family: $font-family-tertiary;
-        font-weight: 800;
-        font-size: $font-size-very-large;
+        font: {
+            family: $font-family-tertiary;
+            weight: 800;
+            size: $font-size-very-large;
+        }
+
         color: $color-gray-1;
         text-decoration: none;
-
-        @include breakpoint('xs') {
-            font-size: $font-size-large;
-        }
     }
 
     .nav-layout {
         display: flex;
-        max-width: 703px;
+        max-width: max-content;
+        gap: 40px;
         width: 100%;
         align-items: center;
         justify-content: space-between;
-
-        @include breakpoint('s') {
-            display: none;
-        }
     }
 
     .router-link {
-        font-family: $font-family-primary;
-        font-size: $font-size-large;
-        font-weight: 500;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-large;
+            weight: 500;
+        }
+
         color: $color-gray-1;
         text-decoration-line: none;
         transition: all 0.1s ease-in-out;
@@ -103,9 +98,25 @@
         height: auto;
         max-width: 25px;
         width: 100%;
+    }
 
-        @include breakpoint('s') {
+    @include breakpoint('s') {
+        .nav-layout {
+            display: none;
+        }
+
+        .hamburger-menu {
             display: unset;
+        }
+    }
+
+    @include breakpoint('xs') {
+        .navbar-layout {
+            margin-bottom: 46px;
+        }
+
+        .head-title {
+            font-size: $font-size-large;
         }
     }
 </style>

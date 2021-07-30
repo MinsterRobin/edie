@@ -23,7 +23,7 @@
                 <Cta class="cta"/>
             </div>
 
-            <p class="credits">created by <b><a href="https://robin-minster.fr">Minster Robin</a></b> - devChallenges.io</p>
+            <p class="credits">created by <b><a href="https://robin-minster.fr">Minster Robin</a></b></p>
 
         </div>
     </div>
@@ -89,16 +89,22 @@
     }
 
     .title {
-        font-family: $font-family-tertiary;
-        font-size: $font-size-very-large;
-        font-weight: 800;
+        font: {
+            family: $font-family-tertiary;
+            size: $font-size-very-large;
+            weight: 800;
+        }
+
         color: $color-background;
     }
 
     .router-link {
-        font-family: $font-family-primary;
-        font-size: $font-size-medium;
-        font-weight: 400;
+        font: {
+            family: $font-family-primary;
+            size: $font-size-medium;
+            weight: 400;
+        }
+
         color: $color-background;
         text-decoration-line: none;
         max-width: max-content;
@@ -106,9 +112,12 @@
 
     .credits {
         text-align: center;
-        font-family: $font-family-secondary;
-        font-size: $font-size-small;
-        font-weight: 500;
+        font: {
+            family: $font-family-secondary;
+            size: $font-size-small;
+            weight: 500;
+        }
+
         color: $color-gray-5;
     }
 
